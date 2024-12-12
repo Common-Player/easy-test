@@ -1,0 +1,24 @@
+/* styles/globals.css */
+
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --title-color: #444;
+    --button-color: #0070f3;
+    --button-hover-color: #005bb5;
+    --input-background: #fff;
+    --section-border-color: #eee;
+    --preformatted-background: #f9f9f9;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* 其他全局样式可以在这里定义 */
+  

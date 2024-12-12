@@ -1,27 +1,33 @@
+/* styles/globals.css */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --title-color: #444;
+  --button-color: #0070f3;
+  --button-hover-color: #005bb5;
+  --input-background: #fff;
+  --section-border-color: #eee;
+  --preformatted-background: #f9f9f9;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+/* 其他全局样式可以在这里定义 */
+
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
