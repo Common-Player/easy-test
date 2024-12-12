@@ -1,23 +1,13 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <style>
-    body { display: flex; justify-content: center; align-items: center; height: 98vh; background: #222; color: #fff; }
-    #g { display: grid; grid-template: repeat(21, 20px) / repeat(21, 20px); gap: 1px; }
-    .c { width: 20px; height: 20px; }
-    .w { background: #444; }
-    .p { background: #fff; }
-    .pl { background: #0f0; }
-    .e { background: #f00; }
-  </style>
-</head>
-<body>
-  <div id="g"></div>
-  <script>
-    const s=21,m=Array.from({length:s},()=>Array(s).fill(1)),st=[],d=[[2,0],[0,2],[-2,0],[0,-2]],sh=a=>{for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;},g=document.getElementById('g'),p={x:1,y:1};
-    function gen(x=1,y=1){m[y][x]=0;st.push([x,y]);while(st.length){let [cx,cy]=st[st.length-1],nb=sh(d.map(([dx,dy])=>[cx+dx,cy+dy]).filter(([x,y])=>x>0&&x<s-1&&y>0&&y<s-1&&m[y][x]));if(nb.length){let [nx,ny]=nb[0];m[(cy+ny)/2][(cx+nx)/2]=m[ny][nx]=0;st.push([nx,ny]);}else st.pop();}}gen();m[s-2][s-2]=9;
-    function dr(){g.innerHTML=m.map((r,y)=>r.map((c,x)=>`<div class="c ${c===1?'w':'p'}${x===p.x&&y===p.y?' pl':''}${c===9?' e':''}"></div>`).join('')).join('');}
-    document.addEventListener('keydown',e=>{let{k,x,y}=p,move={ArrowUp:[0,-1],ArrowDown:[0,1],ArrowLeft:[-1,0],ArrowRight:[1,0]}[e.key];if(move){let[dx,dy]=move,nx=x+dx,ny=y+dy;if(nx>0&&nx<s&&ny>0&&ny<s&&m[ny][nx]!==1){p.x=nx;p.y=ny;dr();if(m[ny][nx]===9)alert('win!');}}});dr();
-  </script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
